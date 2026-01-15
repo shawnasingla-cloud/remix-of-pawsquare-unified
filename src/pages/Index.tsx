@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Dog, Users, MapPin, HelpCircle } from "lucide-react";
+import { Dog, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import { GetStarted } from "@/components/GetStarted";
 import TutorialPopup from "@/components/TutorialPopup";
+import AIChatWidget from "@/components/AIChatWidget";
 import heroImage from "@/assets/hero-pets.jpg";
 
 const Index = () => {
@@ -155,21 +156,8 @@ const Index = () => {
 
       <Footer />
 
-      {/* Floating Help Button */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: "spring" }}
-        className="fixed bottom-6 right-6 z-40"
-      >
-        <Button 
-          onClick={() => setShowTutorial(true)}
-          className="w-14 h-14 rounded-full shadow-lg btn-primary-gradient"
-          size="icon"
-        >
-          <HelpCircle className="w-6 h-6" />
-        </Button>
-      </motion.div>
+      {/* AI Chat Widget */}
+      <AIChatWidget />
     </div>
   );
 };
